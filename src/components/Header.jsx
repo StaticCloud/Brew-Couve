@@ -1,19 +1,38 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
-
     display: flex;
+    position: fixed;
+    align-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15px;
     height: 50px;
     background-color: black;
+
+    /* draw a blank square over header to prevent nav links from displaying */
+    .hamburger-wrapper:before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background-color: black;
+        z-index: 0;
+    }
 
     .hamburger-wrapper {
         position: relative;
         display: block;
         width: 20px;
         height: 20px;
+        z-index: -1;
     }
 
     .hamburger,
@@ -52,6 +71,24 @@ const Header = styled.header`
         z-index: 1;
     }
 
+    .menu {
+        display: flex;
+        position: fixed;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding-top: 50px;
+        width: 100vw;
+        height: 0vh;
+        list-style: none;
+        transition: 0.4s;
+        background-color: black;
+        z-index: -1;
+    }
+
     input[type="checkbox"]:hover {
         cursor: pointer;
     }
@@ -71,46 +108,32 @@ const Header = styled.header`
     }
 
     input[type="checkbox"]:checked ~ .menu {
-        height: 30vh;
+        height: 100vh;
+        top: 0px;
     }
 
-    .menu {
-        display: flex;
-        position: fixed;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-around;
-        top: 0;
-        right: 0;
-        padding-top: 50px;
-        width: 100vw;
-        height: 0vh;
-        list-style: none;
-        transition: 0.2s;
-        background-color: black;
-        z-index: -1;
-    }
-
-    .menu li {
-        display: inline-block;
+    .menu a {
+        display: inline-flex;
         position: relative;
+        top: -50px;
+        z-index: -2;
     }
 
-    .menu li:hover {
+    .menu a:hover {
         cursor: pointer;
     }
 
-    .menu li:before {
+    .menu a:before {
         content: '';
         position: absolute;
         width: 0;
         height: 2px;
         bottom: 0;
         background-color: white;
-        transition: 0.2s;
+        transition: 0.4s;
     }
 
-    .menu li:hover:before {
+    .menu a:hover:before {
         width: 100%;
     }
 
@@ -120,24 +143,16 @@ function HeaderComponent() {
     return (
         <Header>
             <h1>BREW COUVE</h1>
-            
+
             <div className="hamburger-wrapper">
-                <input type="checkbox"/>
-                <div className="hamburger"/>
-                <ul className="menu">
-                    <li>
-                        <p>Home</p>
-                    </li>
-                    <li>
-                       <p>Menu</p>
-                    </li>
-                    <li>
-                        <p>About</p>
-                    </li>
-                    <li>
-                        <p>Contact</p>
-                    </li>
-                </ul>
+                <input type="checkbox" />
+                <div className="hamburger" />
+                <nav className="menu">
+                    <Link to="/">Home</Link>
+                    <Link>Menu</Link>
+                    <Link>About</Link>
+                    <Link>Contact</Link>
+                </nav>
             </div>
         </Header>
     );
