@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = styled.header`
@@ -109,14 +110,19 @@ const Header = styled.header`
 
     input[type="checkbox"]:checked ~ .menu {
         height: 100vh;
-        top: 0px;
+    }
+
+    input[type="checkbox"]:checked ~ .menu a {
+        top: -30px;
     }
 
     .menu a {
         display: inline-flex;
         position: relative;
-        top: -50px;
+        top: -95px;
         z-index: -2;
+        transition: 0.4s;
+        font-size: 2rem;
     }
 
     .menu a:hover {
@@ -140,16 +146,19 @@ const Header = styled.header`
 `
 
 function HeaderComponent() {
+
+    const [checked, setChecked] = useState(false)
+
     return (
         <Header>
             <h1>BREW COUVE</h1>
 
             <div className="hamburger-wrapper">
-                <input type="checkbox" />
+                <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
                 <div className="hamburger" />
-                <nav className="menu">
+                <nav className="menu" onClick={() => setChecked(!checked)}>
                     <Link to="/">Home</Link>
-                    <Link>Menu</Link>
+                    <Link to="/menu">Menu</Link>
                     <Link>About</Link>
                     <Link>Contact</Link>
                 </nav>
