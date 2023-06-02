@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import coffee from '../assets/img/coffee.jpg'
+import Button from '../components/Button'
 
 const HomeWrapper = styled.section`
     background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${coffee});
@@ -39,9 +40,7 @@ function Home() {
                 <h1>THE VANCOUVER WAY</h1>
                 <div className="promo-details">
                     <p>We are a totally real coffee shop located in Vancouver, WA.</p>
-                    <button>
-                        LEARN MORE
-                    </button>
+                    <Button text="LEARN MORE"/>
                 </div>
             </div>
         </HomeWrapper>
