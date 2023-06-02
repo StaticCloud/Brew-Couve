@@ -9,8 +9,8 @@ const MainComponent = styled.main`
   position: absolute;
   z-index: -2;
   width: 100%;
-  padding-top: 50px;
-  height: calc(100% - 50px);
+  height: 100%;
+  background-color: black;
 `;
 
 function App() {
