@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import coffee from '../assets/img/coffee.jpg'
 import Button from '../components/Button'
 
+import { Link } from 'react-router-dom';
+
 const HomeWrapper = styled.section`
     height: 100%;
     display: flex;
@@ -21,6 +23,10 @@ const HomeWrapper = styled.section`
         font-size: 1rem;
     }
 
+    a {
+        display: inline-block;
+    }
+
     .promo-wrapper {
         display: flex;
         flex-direction: column;
@@ -29,13 +35,13 @@ const HomeWrapper = styled.section`
     }
 
     .coffee {
-        width: 500px;
+        width: 450px;
         height: 300px;
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-image: url(${coffee});
-        filter: grayscale(100%);
+        clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
     }
 `;
 
@@ -47,12 +53,12 @@ function Home() {
                 <h1>THE VANCOUVER WAY</h1>
                 <div className="promo-details">
                     <p>We are a totally real coffee shop located in Vancouver, WA.</p>
-                    <Button text="LEARN MORE"/>
+                    <Link to="/menu">
+                        <Button text="CHECK OUT OUR MENU"/>
+                    </Link>
                 </div>
             </div>
-            <div className="coffee">
-
-            </div>
+            <div className="coffee"></div>
         </HomeWrapper>
     );
 }
