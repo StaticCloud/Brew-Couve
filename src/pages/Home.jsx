@@ -3,15 +3,12 @@ import coffee from '../assets/img/coffee.jpg'
 import Button from '../components/Button'
 
 const HomeWrapper = styled.section`
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${coffee});
-    background-size: cover;
-    background-position: center;
     height: 100%;
     display: flex;
     flex-wrap: wrap-reverse;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    clip-path: polygon(0 9%, 100% 6%, 100% 87%, 0 75%);
+    align-content: center;
     padding: 0px 30px;
 
     h1 {
@@ -30,6 +27,16 @@ const HomeWrapper = styled.section`
         background-color: black;
         padding: 30px;
     }
+
+    .coffee {
+        width: 500px;
+        height: 300px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(${coffee});
+        filter: grayscale(100%);
+    }
 `;
 
 function Home() {
@@ -42,6 +49,9 @@ function Home() {
                     <p>We are a totally real coffee shop located in Vancouver, WA.</p>
                     <Button text="LEARN MORE"/>
                 </div>
+            </div>
+            <div className="coffee">
+
             </div>
         </HomeWrapper>
     );

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'
 import Menu from './pages/Menu'
+import About from './pages/About'
 import HeaderComponent from './components/Header'
 import styled from 'styled-components'; 
 import './App.css'
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/menu" element={<Menu/>}></Route>
+          <Route path="/about" element={<About/>}></Route>
         </Routes>
       </MainComponent>
     </BrowserRouter>

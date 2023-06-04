@@ -159,7 +159,7 @@ function HeaderComponent() {
                 <nav className="menu" onClick={() => setChecked(!checked)}>
                     <Link to="/">Home</Link>
                     <Link to="/menu">Menu</Link>
-                    <Link>About</Link>
+                    <Link to="/about">About</Link>
                     <Link>Contact</Link>
                 </nav>
             </div>
