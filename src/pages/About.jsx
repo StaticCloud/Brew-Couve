@@ -8,6 +8,7 @@ const AboutWrapper = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 50px;
 
     .container {
         display: flex;
@@ -46,7 +47,7 @@ const AboutWrapper = styled.section`
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        width: 500px;
+        width: 400px;
         height: 300px;
         clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
     }
