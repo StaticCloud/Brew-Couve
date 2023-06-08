@@ -20,7 +20,7 @@ const MenuWrapper = styled.section`
         aspect-ratio: 1;
         position: relative;
         width: 300px;
-        height: 300px;
+        height: 200px;
         padding: 20px 0;
     }
 
