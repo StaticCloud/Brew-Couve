@@ -4,7 +4,9 @@ import tea from '../assets/menu-images/tea/green-tea.jpg'
 import iceTea from '../assets/menu-images/ice-tea/lemon-ice-tea.jpg'
 import bakery from '../assets/menu-images/bakery/blueberry-muffin.jpg'
 
-import bakeryMenu from "../menu/bakery.js"
+import bakeryMenu from "../menu/bakery.js";
+import teaMenu from "../menu/tea.js";
+import iceTeaMenu from "../menu/ice-tea.js";
 
 const menu = {
     primary: true,
@@ -19,11 +21,13 @@ const menu = {
         },
         {
             name: "TEA",
-            image: tea
+            image: tea,
+            menu: teaMenu
         },
         {
             name: "ICE TEA",
-            image: iceTea
+            image: iceTea,
+            menu: iceTeaMenu
         },
         {
             name: "BAKERY",

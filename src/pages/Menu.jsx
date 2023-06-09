@@ -26,7 +26,7 @@ const MenuWrapper = styled.section`
         padding: 20px 0;
     }
 
-    .menu-item:hover {
+    .clickable:hover {
         cursor: pointer;
     }
 
@@ -73,7 +73,7 @@ function Menu() {
             <div className="menu-wrapper">
                 {currentMenu.options.map((item, i) => {
                     return (
-                        <div className="menu-item" key={i} onClick={item.menu ? () => setCurrentMenu(item.menu) : () => {}}>
+                        <div className={`menu-item ${currentMenu.primary == true ? "clickable" : "" }`} key={i} onClick={item.menu ? () => setCurrentMenu(item.menu) : () => {}}>
                             <div className="menu-item-image" style={{backgroundImage: `url(${item.image})`}}>
 
                             </div>
