@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import menuImage from '../assets/img/waterfront.jpg';
 import menu from '../menu/primary-menu';
+import Button from "../components/Button"
+import { useState } from "react";
 
 const MenuWrapper = styled.section`
     display: flex
@@ -22,6 +24,10 @@ const MenuWrapper = styled.section`
         width: 300px;
         height: 200px;
         padding: 20px 0;
+    }
+
+    .menu-item:hover {
+        cursor: pointer;
     }
 
     .menu-item-image {
@@ -50,24 +56,37 @@ const MenuWrapper = styled.section`
         bottom: -10px;
         left: -30px;
     }
+
+    .back-button-wrapper {
+        display: table;
+        margin: 20px auto;
+    }
 `;
 
 function Menu() {
+
+    const [currentMenu, setCurrentMenu] = useState(menu);
+
     return (
         <MenuWrapper>
             <h1>MENU</h1>
             <div className="menu-wrapper">
-                {menu.map((item, i) => {
+                {currentMenu.options.map((item, i) => {
                     return (
-                        <div className="menu-item" key={i}>
+                        <div className="menu-item" key={i} onClick={item.menu ? () => setCurrentMenu(item.menu) : () => {}}>
                             <div className="menu-item-image" style={{backgroundImage: `url(${item.image})`}}>
 
                             </div>
-                            <h2>{item.category}</h2>
+                            <h2>{item.name}</h2>
                         </div>
                     );
                 })}
             </div>
+            {currentMenu.primary === false &&
+                <div className="back-button-wrapper" onClick={() => setCurrentMenu(menu)}>
+                    <Button text="GO BACK"></Button>
+                </div>
+            }
         </MenuWrapper>
     );
 }
