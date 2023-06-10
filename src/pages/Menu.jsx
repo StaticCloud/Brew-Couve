@@ -12,7 +12,7 @@ const MenuWrapper = styled.section`
         display: grid;
         margin: 0 auto;
         justify-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: minmax(auto, 50px);
         max-width: 1330px;
         padding: 0 20px;
