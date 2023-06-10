@@ -7,17 +7,21 @@ import bakery from '../assets/menu-images/bakery/blueberry-muffin.jpg'
 import bakeryMenu from "../menu/bakery.js";
 import teaMenu from "../menu/tea.js";
 import iceTeaMenu from "../menu/ice-tea.js";
+import hotMenu from "../menu/hot.js";
+import coldMenu from "../menu/cold.js";
 
 const menu = {
     primary: true,
     options: [
         {
             name: "HOT",
-            image: hot
+            image: hot,
+            menu: hotMenu
         },
         {
             name: "COLD",
-            image: cold
+            image: cold,
+            menu: coldMenu
         },
         {
             name: "TEA",
