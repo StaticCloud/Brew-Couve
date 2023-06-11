@@ -19,10 +19,6 @@ const HomeWrapper = styled.section`
         display: inline-block;
     }
 
-    h2 {
-        font-size: 1rem;
-    }
-
     a {
         display: inline-block;
     }
@@ -43,13 +39,28 @@ const HomeWrapper = styled.section`
         background-image: url(${coffee});
         clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
     }
+
+    @media screen and (min-width: 1024px) {
+        h1 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        .coffee {
+            width: 600px;
+            height: 400px;
+        }
+    }
 `;
 
 function Home() {
     return (
         <HomeWrapper>
             <div className="promo-wrapper">
-                <h2>FUEL YOUR DAY</h2>
+                <p>FUEL YOUR DAY</p>
                 <h1>THE VANCOUVER WAY</h1>
                 <div className="promo-details">
                     <p>We are a totally real coffee shop located in Vancouver, WA.</p>

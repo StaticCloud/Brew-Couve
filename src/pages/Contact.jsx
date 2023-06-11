@@ -75,7 +75,7 @@ function Contact() {
                 <p>Whether you have a question, feedback, or simply want to chat about coffee, we're here to help.</p>
             </div>
             <div className="contact-content">
-                <form>
+                <form onSubmit={(e) => e.preventDefault()}>
                     <h1>CONTACT FORM</h1>
 
                     <label htmlFor="name">Name:</label>

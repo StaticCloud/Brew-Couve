@@ -64,6 +64,11 @@ const Header = styled.header`
         top: 8px;
     }
 
+    label {
+        position: absolute;
+        opacity: 0;
+    }
+
     input[type="checkbox"] {
         position: absolute;
         width: 100%;
@@ -116,6 +121,10 @@ const Header = styled.header`
         top: -30px;
     }
 
+    .desktop-nav {
+        display: none;
+    }
+
     .menu a {
         display: inline-flex;
         position: relative;
@@ -125,11 +134,16 @@ const Header = styled.header`
         font-size: 2rem;
     }
 
+    .menu a {
+        top: -95px;
+    }
+
     .menu a:hover {
         cursor: pointer;
     }
 
-    .menu a:before {
+    .menu a:before,
+    .desktop-nav a:before {
         content: '';
         position: absolute;
         width: 0;
@@ -139,10 +153,27 @@ const Header = styled.header`
         transition: 0.4s;
     }
 
-    .menu a:hover:before {
+    .menu a:hover:before,
+    .desktop-nav a:hover:before {
         width: 100%;
     }
 
+    @media screen and (min-width: 1024px) {
+        .hamburger-wrapper {
+            display: none;
+        }
+
+        .desktop-nav {
+            display: flex;
+        }
+
+        .desktop-nav a {
+            margin: 0 30px 0 0;
+            font-size: 1.3rem;
+            display: inline-flex;
+            position: relative;
+        }
+    }
 `
 
 function HeaderComponent() {
@@ -154,7 +185,8 @@ function HeaderComponent() {
             <h1>BREW COUVE</h1>
 
             <div className="hamburger-wrapper">
-                <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
+                <label htmlFor="hamburger">Hamburger</label>
+                <input name="hamburger" type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
                 <div className="hamburger" />
                 <nav className="menu" onClick={() => setChecked(!checked)}>
                     <Link to="/">Home</Link>
@@ -163,6 +195,12 @@ function HeaderComponent() {
                     <Link to="/contact">Contact</Link>
                 </nav>
             </div>
+            <nav className="desktop-nav">
+                <Link to="/">Home</Link>
+                <Link to="/menu">Menu</Link>
+                <Link to="/about">About</Link>
+                <Link to="/contact">Contact</Link>
+            </nav>
         </Header>
     );
 }

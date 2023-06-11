@@ -23,7 +23,7 @@ const AboutWrapper = styled.section`
         padding: 30px;
     }
 
-    .inner-section h1 {
+    h1 {
         font-size: 2.5rem;
     }
 
@@ -51,6 +51,43 @@ const AboutWrapper = styled.section`
         height: 300px;
         clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
     }
+
+    @media screen and (min-width: 1024px) {
+        h1 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .inner-section {
+            width: 500px;
+            padding: 0 10px;
+        }
+
+        .image {
+            width: 500px;
+            height: 300px;
+        }
+
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        .reverse .image {
+            inset: 0;
+            clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+        }
+
+        .reverse .inner-section {
+            text-align: right;
+        }
+
+        .container {
+            margin: 50px 0;
+        }
+    }
 `;
 
 function About() {
@@ -63,7 +100,7 @@ function About() {
                 </div>
                 <div className="about image"></div>
             </div>
-            <div className="container">
+            <div className="container reverse">
                 <div className="inner-section">
                     <h1>OUR STORY</h1>
                     <p>Brew Couve was born out of a shared love for coffee and a desire to create a space where people can come together, connect, and enjoy the perfect brew. Our founders envisioned a coffee shop that would become a cornerstone of the community—a place where friendships are forged, ideas are exchanged, and memories are made.</p>
@@ -77,7 +114,7 @@ function About() {
                 </div>
                 <div className="americano image"></div>
             </div>
-            <div className="container">
+            <div className="container reverse">
                 <div className="inner-section">
                     <h1>JOIN US</h1>
                     <p>We invite you to step into Brew Couve and experience the rich flavors, warm ambiance, and genuine hospitality that define our coffee shop. Whether you're a coffee aficionado or simply looking for a place to unwind, we guarantee you'll find a welcoming atmosphere and a delicious cup of coffee waiting for you.</p>
