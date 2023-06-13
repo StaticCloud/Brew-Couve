@@ -168,7 +168,7 @@ const Header = styled.header`
         }
 
         .desktop-nav a {
-            margin: 0 30px 0 0;
+            margin: 0 0 0 30px;
             font-size: 1.3rem;
             display: inline-flex;
             position: relative;
