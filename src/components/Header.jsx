@@ -186,7 +186,7 @@ function HeaderComponent() {
 
             <div className="hamburger-wrapper">
                 <label htmlFor="hamburger">Hamburger</label>
-                <input name="hamburger" type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
+                <input name="hamburger" id="hamburger" type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
                 <div className="hamburger" />
                 <nav className="menu" onClick={() => setChecked(!checked)}>
                     <Link to="/">Home</Link>
