@@ -5,7 +5,7 @@ const ButtonWrapper = styled.button`
     border: none;
     font-family: 'Oswald', sans-serif;
     font-size: 1rem;
-    color: black;
+    color: #131313;
     background-color: white;
     position: relative;
     margin-top: 20px;
@@ -15,7 +15,7 @@ const ButtonWrapper = styled.button`
     &:before {
         content: "";
         position: absolute;
-        background-color: black;
+        background-color: #131313;
         width: 0%;
         height: 100%;
         top: 0;

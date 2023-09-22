@@ -26,7 +26,7 @@ const HomeWrapper = styled.section`
     .promo-wrapper {
         display: flex;
         flex-direction: column;
-        background-color: black;
+        background-color: #131313;
         padding: 30px;
     }
 
